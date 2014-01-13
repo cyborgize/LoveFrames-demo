@@ -31,7 +31,7 @@ function example.func()
 		
 	grid.OnSizeChanged = function(object)
 		frame:SetSize(object:GetWidth() + 10, object:GetHeight() + 35)
-		frame:Center()
+		frame:CenterWithinArea(unpack(demo.centerarea))
 	end
 	
 end

@@ -5,7 +5,7 @@ function love.load()
 	require("libraries.demo")
 	
 	bgimage = love.graphics.newImage("resources/images/bg.png")
-	
+   
 end
 
 function love.update(dt)
@@ -26,14 +26,20 @@ function love.draw()
 	love.graphics.draw(bgimage, 0, 0, 0, scalex, scaley)
 	loveframes.draw()
 	
-	--love.graphics.setColor(0, 0, 0, 255)
-	--love.graphics.rectangle("fill", unpack(demo.centerarea))
-	
 end
 
 function love.mousepressed(x, y, button)
 	
 	loveframes.mousepressed(x, y, button)
+	
+	local hoverobject = loveframes.hoverobject
+	if hoverobject and hoverobject.menu_example and button == "r" then
+		if hoverobject.menu then
+			hoverobject.menu:Remove()
+			hoverobject.menu = nil
+		end
+		createMenus(x, y)
+	end
 	
 end
 
@@ -62,4 +68,10 @@ function love.keyreleased(key)
 
 	loveframes.keyreleased(key)
 	
+end
+
+if love._version == "0.9.0" then
+	function love.textinput(text)
+		loveframes.textinput(text)
+	end
 end

@@ -4,16 +4,45 @@ example.category = "Example Implementations"
 
 function example.func()
 	
+	local headers = {}
+	
 	local frame = loveframes.Create("frame")
 	frame:SetName("HTTP Request")
 	frame:SetSize(500, 365)
 	frame:CenterWithinArea(unpack(demo.centerarea))
-		
+	
+	local resultpanel = loveframes.Create("panel", frame)
+	resultpanel:SetPos(5, 30)
+	resultpanel:SetSize(490, 25)
+	
+	local headersbutton = loveframes.Create("button", resultpanel)
+	headersbutton:SetPos(390, 0)
+	headersbutton:SetSize(100, 25)
+	headersbutton:SetText("View Headers")
+	headersbutton:SetVisible(false)
+	headersbutton.OnClick = function(object)
+		local headersframe = loveframes.Create("frame")
+		headersframe:SetName("Headers")
+		headersframe:SetSize(400, 200)
+		headersframe:CenterWithinArea(unpack(demo.centerarea))
+		local headerslist = loveframes.Create("columnlist", headersframe)
+		headerslist:SetPos(5, 30)
+		headerslist:SetSize(390, 165)
+		headerslist:AddColumn("Name")
+		headerslist:AddColumn("Value")
+		for k, v in pairs(headers) do
+			headerslist:AddRow(k, v)
+		end
+	end
+	
+	local resulttext = loveframes.Create("text", resultpanel)
+	resulttext:SetPos(5, 5)
+	
 	local resultinput = loveframes.Create("textinput", frame)
-	resultinput:SetPos(5, 30)
+	resultinput:SetPos(5, 60)
 	resultinput:SetWidth(490)
 	resultinput:SetMultiline(true)
-	resultinput:SetHeight(300)
+	resultinput:SetHeight(270)
 	resultinput:SetEditable(false)
 	
 	local urlinput = loveframes.Create("textinput", frame)
@@ -30,7 +59,12 @@ function example.func()
 		local http = require("socket.http")
 		local b, c, h = http.request(url)
 		if b then
-			resultinput:SetText("Displaying response from " ..url.. " - status code: " ..c.. "\n\n" ..b)
+			resulttext:SetText("Response code: " ..c)
+			resulttext:CenterY()
+			resultinput:SetText(b)
+			resultinput:SetFocus(true)
+			headersbutton:SetVisible(true)
+			headers = h
 		else
 			resultinput:SetText("Error: HTTP request returned a nil value.")
 		end

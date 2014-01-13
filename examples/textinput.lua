@@ -8,7 +8,7 @@ function example.func()
 	frame:SetName("Text Input")
 	frame:SetSize(500, 90)
 	frame:CenterWithinArea(unpack(demo.centerarea))
-		
+	
 	local textinput = loveframes.Create("textinput", frame)
 	textinput:SetPos(5, 30)
 	textinput:SetWidth(490)
@@ -18,7 +18,7 @@ function example.func()
 		end
 	end
 	textinput:SetFont(love.graphics.newFont(12))
-		
+	
 	local togglebutton = loveframes.Create("button", frame)
 	togglebutton:SetPos(5, 60)
 	togglebutton:SetWidth(490)

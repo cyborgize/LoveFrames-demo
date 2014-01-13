@@ -6,7 +6,7 @@ function example.func()
 	
 	local frame = loveframes.Create("frame")
 	frame:SetName("List")
-	frame:SetSize(500, 455)
+	frame:SetSize(500, 470)
 	frame:CenterWithinArea(unpack(demo.centerarea))
 		
 	local list = loveframes.Create("list", frame)
@@ -14,11 +14,11 @@ function example.func()
 	list:SetSize(490, 300)
 	list:SetPadding(5)
 	list:SetSpacing(5)
-		
-	local panel = loveframes.Create("panel", frame)
-	panel:SetPos(5, 335)
+	
+	local panel = loveframes.Create("panel")
 	panel:SetSize(490, 115)
-		
+	panel.Draw = function() end
+	
 	local slider1 = loveframes.Create("slider", panel)
 	slider1:SetPos(5, 20)
 	slider1:SetWidth(480)
@@ -108,7 +108,14 @@ function example.func()
 			object:SetClickable(true)
 		end
 	end
-		
+	
+	local form = loveframes.Create("form", frame)
+	form:SetPos(5, 335)
+	form.padding = 0
+	form.spacing = 0
+	form:SetName("List Controls")
+	form:AddItem(panel)
+	
 	for i=1, 100 do
 		local button = loveframes.Create("button")
 		button:SetText(i)

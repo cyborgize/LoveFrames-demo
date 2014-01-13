@@ -12,7 +12,7 @@ function example.func()
 	local multichoice = loveframes.Create("multichoice", frame)
 	multichoice:SetPos(5, 30)
 		
-	for i=1, 20 do
+	for i=1, 10 do
 		multichoice:AddChoice(i)
 	end
 	

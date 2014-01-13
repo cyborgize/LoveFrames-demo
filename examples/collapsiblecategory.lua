@@ -11,12 +11,17 @@ function example.func()
 		
 	local panel = loveframes.Create("panel")
 	panel:SetHeight(230)
-		
+	
+	local text = loveframes.Create("text", panel)
+	text:SetText("Collapsible Category")
+	
 	local collapsiblecategory = loveframes.Create("collapsiblecategory", frame)
 	collapsiblecategory:SetPos(5, 30)
 	collapsiblecategory:SetSize(490, 265)
 	collapsiblecategory:SetText("Category 1")
 	collapsiblecategory:SetObject(panel)
+	
+	text:Center()
 	
 end
 
