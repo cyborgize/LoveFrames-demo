@@ -5,7 +5,7 @@ example.category = "Object Demonstrations"
 function example.func()
 	
 	local frame = loveframes.Create("frame")
-	frame:SetName("Button")
+	frame:SetName("Form")
 	frame:SetSize(500, 80)
 	frame:CenterWithinArea(unpack(demo.centerarea))
 		
