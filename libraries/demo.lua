@@ -38,7 +38,7 @@ function demo.CreateToolbar()
 	
 	local info = loveframes.Create("text", toolbar)
 	info:SetPos(5, 3)
-	info:SetText({{0, 0, 0, 255}, "Love Frames (version " ..version.. " - " ..stage.. ") \n ", {255, 102, 0, 255}, "F1", {0, 0, 0, 255}, ": Toggle debug mode - ", {255, 102, 0, 255}, "F2", {0, 0, 0, 255}, ": Remove all objects"})
+	info:SetText({{color = {0, 0, 0, 255}}, "Love Frames (version " ..version.. " - " ..stage.. ") \n ", {color = {255, 102, 0, 255}}, "F1", {color = {0, 0, 0, 255}}, ": Toggle debug mode - ", {color = {255, 102, 0, 255}}, "F2", {color = {0, 0, 0, 255}}, ": Remove all objects"})
 	
 	demo.examplesbutton = loveframes.Create("button", toolbar)
 	demo.examplesbutton:SetPos(toolbar:GetWidth() - 105, 5)
