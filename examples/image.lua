@@ -31,7 +31,11 @@ function example.func()
 	end
 		
 	text1.Update = function(object, dt)
-		object:SetText("Orientation: " ..slider1:GetValue())
+		local value = slider1:GetValue()
+		local max = slider1:GetMax()
+		local progress = value/max
+		local final = loveframes.util.Round(360 * progress)
+		object:SetText("Orientation: " ..final)
 	end
 		
 	local text2 = loveframes.Create("text", panel)
