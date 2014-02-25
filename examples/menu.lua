@@ -5,7 +5,7 @@ example.category = "Object Demonstrations"
 function example.func()
 	
 	local frame = loveframes.Create("frame")
-	frame:SetName("Button")
+	frame:SetName("Menu")
 	frame:CenterWithinArea(unpack(demo.centerarea))
 	frame.menu_example = true
 	
