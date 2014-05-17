@@ -70,8 +70,6 @@ function love.keyreleased(key)
 	
 end
 
-if love._version == "0.9.0" then
-	function love.textinput(text)
-		loveframes.textinput(text)
-	end
+function love.textinput(text)
+	loveframes.textinput(text)
 end
