@@ -49,9 +49,9 @@ function love.mousereleased(x, y, button)
 
 end
 
-function love.keypressed(key, unicode)
+function love.keypressed(key, isrepeat)
 	
-	loveframes.keypressed(key, unicode)
+	loveframes.keypressed(key, isrepeat)
 	
 	if key == "f1" then
 		local debug = loveframes.config["DEBUG"]
