@@ -1,6 +1,6 @@
 # Love Frames Demo
 
-This repository houses the files used to create the Love Frames demo. The source code of the library itself can be found at [https://github.com/NikolaiResokav/LoveFrames](https://github.com/NikolaiResokav/LoveFrames).
+This repository houses the files used to create the Love Frames demo. The source code of the library itself can be found at [https://github.com/KennyShields/LoveFrames](https://github.com/KennyShields/LoveFrames).
 
 ## Credits
 
