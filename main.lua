@@ -1,7 +1,7 @@
 function love.load()
 	
 	tween = require("libraries.third-party.tween")
-	require("libraries.loveframes")
+	loveframes = require("libraries.loveframes")
 	require("libraries.demo")
 	
 	bgimage = love.graphics.newImage("resources/images/bg.png")
