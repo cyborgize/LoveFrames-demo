@@ -49,6 +49,12 @@ function love.mousereleased(x, y, button)
 
 end
 
+function love.wheelmoved(x, y)
+
+	loveframes.wheelmoved(x, y)
+
+end
+
 function love.keypressed(key, isrepeat)
 	
 	loveframes.keypressed(key, isrepeat)

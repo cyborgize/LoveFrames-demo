@@ -2,7 +2,7 @@ function love.conf(t)
 
 	t.title             = "Love Frames Demo"
 	t.author            = "Kenny Shields"
-	t.version           = "0.9.1"
+	t.version           = "0.10.0"
 	t.identity          = "loveframes-demo"
 	
 	t.console           = true	 
